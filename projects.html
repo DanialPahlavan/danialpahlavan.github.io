@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danial Pahlavan Mosavari - Current Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Danial Pahlavan Mosavari</h1>
+            <h2>PhD Student in Artificial Intelligence</h2>
+            <a href="/DataScience_CV%20(2).pdf" download style="display:inline-block;margin-top:10px;color:#337ab7;">Download CV (PDF)</a>
+        </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" data-nav-target="home">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="projects" data-page="projects">
+            <h2>Projects</h2>
+            <div id="category-filters">
+                <!-- Category filter buttons will be dynamically loaded here by JavaScript -->
+            </div>
+            <div id="project-cards-container">
+                <!-- Project cards will be dynamically loaded here by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalProjectTitle"></h3>
+            <p id="modalProjectDescription"></p>
+            <a id="modalProjectLink" href="#" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Danial Pahlavan Mosavari</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

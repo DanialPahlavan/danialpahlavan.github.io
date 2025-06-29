@@ -31,6 +31,37 @@ header h2 {
     font-weight: 300;
 }
 
+nav {
+    background: #444;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
 section {
     background: #fff;
     margin: 20px 0;
@@ -83,4 +114,98 @@ footer {
     padding: 20px;
     margin-top: 20px;
     color: #666;
+}
+
+.project-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background: #f9f9f9;
+    cursor: pointer; /* Indicate it's clickable */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.project-item p {
+    margin-bottom: 10px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Category Filter Styles */
+#category-filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-filter-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-filter-button:hover {
+    background-color: #e0e0e0;
+}
+
+.category-filter-button.active {
+    background-color: #337ab7;
+    color: #fff;
+    border-color: #337ab7;
 }
