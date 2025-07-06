@@ -1,0 +1,249 @@
+/* General Styles & Variables */
+:root {
+    --bg-light: #f8f9fa;
+    --text-light: #212529;
+    --secondary-text-light: #6c757d;
+    --card-bg-light: #ffffff;
+    --card-border-light: #e9ecef;
+    --link-light: #007bff;
+    --header-bg-light: rgba(255, 255, 255, 0.8);
+    --nav-link-light: #495057;
+    --nav-link-hover-light: #007bff;
+    --aura-glow: 0 0 20px rgba(0, 123, 255, 0.15);
+
+    --bg-dark: #121212;
+    --text-dark: #e0e0e0;
+    --secondary-text-dark: #adb5bd;
+    --card-bg-dark: #1e1e1e;
+    --card-border-dark: #343a40;
+    --link-dark: #bb86fc;
+    --header-bg-dark: rgba(30, 30, 30, 0.8);
+    --nav-link-dark: #ced4da;
+    --nav-link-hover-dark: #bb86fc;
+    --aura-glow-dark: 0 0 20px rgba(187, 134, 252, 0.15);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 15px;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--header-bg-light);
+    border-bottom: 1px solid var(--card-border-light);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+header h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--secondary-text-light);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--nav-link-light);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--nav-link-hover-light);
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Main Content & Cards */
+section {
+    background-color: var(--card-bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border-light);
+    box-shadow: var(--aura-glow);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+section h2, section h3 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+/* Links */
+a {
+    color: var(--link-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blog Post Specifics */
+.blog-post {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--card-border-light);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.post-meta {
+    color: var(--secondary-text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: var(--secondary-text-light);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode header {
+    background-color: var(--header-bg-dark);
+    border-bottom: 1px solid var(--card-border-dark);
+}
+
+body.dark-mode header h2 {
+    color: var(--secondary-text-dark);
+}
+
+body.dark-mode nav ul li a {
+    color: var(--nav-link-dark);
+}
+
+body.dark-mode nav ul li a:hover {
+    color: var(--nav-link-hover-dark);
+    background-color: rgba(187, 134, 252, 0.1);
+}
+
+body.dark-mode section {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--card-border-dark);
+    box-shadow: var(--aura-glow-dark);
+}
+
+body.dark-mode section h2, body.dark-mode section h3 {
+    color: var(--text-dark);
+}
+
+body.dark-mode a {
+    color: var(--link-dark);
+}
+
+body.dark-mode .blog-post {
+    border-bottom: 1px solid var(--card-border-dark);
+}
+
+body.dark-mode .post-meta {
+    color: var(--secondary-text-dark);
+}
+
+body.dark-mode footer {
+    color: var(--secondary-text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    nav ul {
+        gap: 10px;
+    }
+    nav ul li a {
+        padding: 5px;
+    }
+    .container {
+        padding: 1rem 15px;
+    }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--card-border-light);
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 1rem auto 0;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    border-color: var(--link-light);
+    color: var(--link-light);
+}
+
+body.dark-mode #theme-toggle {
+    border-color: var(--card-border-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode #theme-toggle:hover {
+    border-color: var(--link-dark);
+    color: var(--link-dark);
+}

@@ -1,23 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-            }
+    // Function to include HTML components
+    function includeHTML() {
+        const includes = document.querySelectorAll('[data-include]');
+        const promises = Array.from(includes).map(el => {
+            const file = el.getAttribute('data-include');
+            return fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok for ' + file);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    el.innerHTML = data;
+                });
         });
-    }, {
-        threshold: 0.1
-    });
 
-    sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(section);
-    });
+        // After all HTML components are loaded, initialize the theme toggle
+        Promise.all(promises).then(() => {
+            initializeThemeToggle();
+        });
+    }
 
     // Project Data (replace with your actual projects)
     const projects = [
@@ -60,6 +63,22 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'This comprehensive image processing project involved developing several systems: image enhancement (histogram equalization, local contrast stretching), Sobel edge detection, color segmentation, image denoising (Gaussian, median filters), and image stitching for panoramic images.',
             githubLink: 'https://github.com/DanialPahlavan/Image-Processing',
             categories: ['Image Processing']
+        },
+        {
+            id: 'Rimworld-Translation',
+            title: 'Rimworld Farsi',
+            summary: 'A translation for Rimworld Game',
+            description: 'A translation for rimworld Game',
+            githubLink: 'https://github.com/Ludeon/RimWorld-Farsi',
+            categories: ['Game Dev']
+        },
+        {
+            id: 'FFmpegGUI',
+            title: 'MultiMedia Converter',
+            summary: 'A Simple MultiMedia Converter , Compresser ',
+            description: 'A QT GUI for FFmpeg',
+            githubLink: 'https://github.com/Ludeon/RimWorld-Farsi',
+            categories: ['Desktop App']
         }
         // Add more projects here following the same structure
     ];
@@ -197,4 +216,48 @@ document.addEventListener('DOMContentLoaded', function() {
         if (aboutMeSection) aboutMeSection.style.display = 'block';
         if (contactSection) contactSection.style.display = 'none'; // Hide contact by default
     }
+
+    // Initial call to load components
+    includeHTML();
 });
+
+function initializeThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const body = document.body;
+
+    const applyTheme = (theme) => {
+        body.classList.remove('light-mode', 'dark-mode');
+        body.classList.add(theme + '-mode');
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    };
+
+    themeToggle.addEventListener('click', () => {
+        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    });
+
+    // Set initial icon
+    const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    if (themeIcon) {
+        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+// Apply initial theme on script load
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    if (savedTheme) {
+        body.classList.add(savedTheme + '-mode');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.add('light-mode');
+    }
+})();
