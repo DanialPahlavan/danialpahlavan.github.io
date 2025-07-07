@@ -151,52 +151,52 @@ footer {
 }
 
 /* Dark Mode Styles */
-body.dark-mode {
+html.dark-mode body {
     background-color: var(--bg-dark);
     color: var(--text-dark);
 }
 
-body.dark-mode header {
+html.dark-mode header {
     background-color: var(--header-bg-dark);
     border-bottom: 1px solid var(--card-border-dark);
 }
 
-body.dark-mode header h2 {
+html.dark-mode header h2 {
     color: var(--secondary-text-dark);
 }
 
-body.dark-mode nav ul li a {
+html.dark-mode nav ul li a {
     color: var(--nav-link-dark);
 }
 
-body.dark-mode nav ul li a:hover {
+html.dark-mode nav ul li a:hover {
     color: var(--nav-link-hover-dark);
     background-color: rgba(187, 134, 252, 0.1);
 }
 
-body.dark-mode section {
+html.dark-mode section {
     background-color: var(--card-bg-dark);
     border: 1px solid var(--card-border-dark);
     box-shadow: var(--aura-glow-dark);
 }
 
-body.dark-mode section h2, body.dark-mode section h3 {
+html.dark-mode section h2, html.dark-mode section h3 {
     color: var(--text-dark);
 }
 
-body.dark-mode a {
+html.dark-mode a {
     color: var(--link-dark);
 }
 
-body.dark-mode .blog-post {
+html.dark-mode .blog-post {
     border-bottom: 1px solid var(--card-border-dark);
 }
 
-body.dark-mode .post-meta {
+html.dark-mode .post-meta {
     color: var(--secondary-text-dark);
 }
 
-body.dark-mode footer {
+html.dark-mode footer {
     color: var(--secondary-text-dark);
 }
 
@@ -238,12 +238,47 @@ body.dark-mode footer {
     color: var(--link-light);
 }
 
-body.dark-mode #theme-toggle {
+html.dark-mode #theme-toggle {
     border-color: var(--card-border-dark);
     color: var(--text-dark);
 }
 
-body.dark-mode #theme-toggle:hover {
+html.dark-mode #theme-toggle:hover {
     border-color: var(--link-dark);
     color: var(--link-dark);
+}
+
+/* Project Filter Buttons */
+#category-filters {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 10px;
+}
+
+#category-filters button {
+    background-color: transparent;
+    border: 1px solid var(--card-border-light);
+    color: var(--nav-link-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+#category-filters button:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--nav-link-hover-light);
+    border-color: var(--link-light);
+}
+
+html.dark-mode #category-filters button {
+    border-color: var(--card-border-dark);
+    color: var(--nav-link-dark);
+}
+
+html.dark-mode #category-filters button:hover {
+    background-color: rgba(187, 134, 252, 0.1);
+    color: var(--nav-link-hover-dark);
+    border-color: var(--link-dark);
 }

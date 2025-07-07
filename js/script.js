@@ -1,3 +1,9 @@
+// Apply theme immediately
+(function() {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.classList.add(theme + '-mode');
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Function to handle smooth scrolling for anchor links
     const handleSmoothScrolling = () => {
@@ -58,25 +64,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!themeToggle) return;
 
         const themeIcon = themeToggle.querySelector('.theme-icon');
-        const body = document.body;
 
         const applyTheme = (theme) => {
-            body.classList.remove('light-mode', 'dark-mode');
-            body.classList.add(theme + '-mode');
+            document.documentElement.classList.remove('light-mode', 'dark-mode');
+            document.documentElement.classList.add(theme + '-mode');
             if (themeIcon) {
                 themeIcon.innerText = theme === 'dark' ? '☀️' : '🌙';
             }
         };
 
         themeToggle.addEventListener('click', () => {
-            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            const newTheme = document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark';
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
         });
 
         // Set initial icon
         const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        applyTheme(currentTheme);
+        if (themeIcon) {
+            themeIcon.innerText = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
     }
 
     // Initializations

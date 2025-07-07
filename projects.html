@@ -5,21 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danial Pahlavan Mosavari - Current Projects</title>
     <link rel="stylesheet" href="themes/default/style.css">
-    <style>
-        /* Critical CSS to prevent flashing */
-        .light-mode { background-color: #f8f9fa; color: #212529; }
-        .dark-mode { background-color: #121212; color: #e0e0e0; }
-    </style>
     <script>
-        // Apply initial theme to prevent flashing
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.classList.add(savedTheme + '-mode');
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark-mode');
-        } else {
-            document.documentElement.classList.add('light-mode');
-        }
+        // Apply theme immediately
+        (function() {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.add(theme + '-mode');
+        })();
     </script>
 </head>
 <header>
