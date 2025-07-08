@@ -106,7 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function initializePage() {
         await includeHTML();
         handleSmoothScrolling();
-        setupProjects();
+        if (document.getElementById('category-filters')) {
+            setupProjects();
+        }
         initializeThemeToggle();
     }
 
