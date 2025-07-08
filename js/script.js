@@ -86,8 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to include HTML partials
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[data-include]');
+        for (const el of elements) {
+            const file = el.getAttribute('data-include');
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error('File not found');
+                const data = await response.text();
+                el.innerHTML = data;
+            } catch (error) {
+                console.error('Error including HTML:', error);
+            }
+        }
+    }
+
     // Initializations
-    handleSmoothScrolling();
-    setupProjects();
-    initializeThemeToggle();
+    async function initializePage() {
+        await includeHTML();
+        handleSmoothScrolling();
+        setupProjects();
+        initializeThemeToggle();
+    }
+
+    initializePage();
 });

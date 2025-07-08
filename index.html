@@ -12,25 +12,10 @@
             document.documentElement.classList.add(theme + '-mode');
         })();
     </script>
-</head>
-<header>
-    <div class="container">
-        <h1>Danial Pahlavan Mosavari</h1>
-        <h2>PhD Student in Artificial Intelligence</h2>
-    </div>
-    <nav>
+    </head>
+    <body>
+        <div data-include="_includes/header.html"></div>
         <div class="container">
-            <ul>
-                <li><a href="/index.html" data-nav-target="home">Home</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-    <div class="container">
         <section id="contact" data-page="home">
             <h2>Contact Information</h2>
             <ul>
@@ -162,14 +147,7 @@
             </section>
         </section>
 
-    <div data-include="_includes/footer.html"></div>
-
-    <script src="js/script.js"></script>
-</body>
-<footer>
-    <p>&copy; 2025 Danial Pahlavan Mosavari</p>
-    <button id="theme-toggle" title="Toggle theme">
-        <span class="theme-icon"></span>
-    </button>
-</footer>
+        <div data-include="_includes/footer.html"></div>
+        <script src="js/script.js"></script>
+    </body>
 </html>

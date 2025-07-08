@@ -12,42 +12,21 @@
             document.documentElement.classList.add(theme + '-mode');
         })();
     </script>
-</head>
-<header>
-    <div class="container">
-        <h1>Danial Pahlavan Mosavari</h1>
-        <h2>PhD Student in Artificial Intelligence</h2>
-    </div>
-    <nav>
+    </head>
+    <body>
+        <div data-include="/_includes/header.html"></div>
         <div class="container">
-            <ul>
-                <li><a href="/index.html" data-nav-target="home">Home</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/index.html#contact">Contact</a></li>
-            </ul>
+            <section id="blog-post-full">
+                <article class="blog-post">
+                    <h3>The Rise of Large Language Models</h3>
+                    <p class="post-meta">Published on July 6, 2025</p>
+                    <div class="post-full">
+                        <p>Large Language Models (LLMs) have taken the world by storm, demonstrating remarkable abilities in understanding and generating human-like text. This post explores the fundamental concepts behind LLMs, their architectures, and their impact on various industries. We will delve into the transformer architecture, which is the backbone of most modern LLMs, and discuss the importance of attention mechanisms. Furthermore, we will touch upon the ethical considerations and challenges associated with the development and deployment of these powerful models.</p>
+                    </div>
+                </article>
+            </section>
         </div>
-    </nav>
-</header>
-
-    <div class="container">
-        <section id="blog-post-full">
-            <article class="blog-post">
-                <h3>The Rise of Large Language Models</h3>
-                <p class="post-meta">Published on July 6, 2025</p>
-                <div class="post-full">
-                    <p>Large Language Models (LLMs) have taken the world by storm, demonstrating remarkable abilities in understanding and generating human-like text. This post explores the fundamental concepts behind LLMs, their architectures, and their impact on various industries. We will delve into the transformer architecture, which is the backbone of most modern LLMs, and discuss the importance of attention mechanisms. Furthermore, we will touch upon the ethical considerations and challenges associated with the development and deployment of these powerful models.</p>
-                </div>
-            </article>
-        </section>
-    </div>
-
-    <script src="../js/script.js"></script>
-</body>
-<footer>
-    <p>&copy; 2025 Danial Pahlavan Mosavari</p>
-    <button id="theme-toggle" title="Toggle theme">
-        <span class="theme-icon"></span>
-    </button>
-</footer>
+        <div data-include="/_includes/footer.html"></div>
+        <script src="../js/script.js"></script>
+    </body>
 </html>

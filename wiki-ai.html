@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Wiki - Danial Pahlavan Mosavari</title>
+    <link rel="stylesheet" href="themes/default/style.css">
+    <script>
+        // Apply theme immediately
+        (function() {
+            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.add(theme + '-mode');
+        })();
+    </script>
+</head>
+    <body>
+        <div data-include="_includes/header.html"></div>
+        <div class="container">
+            <section id="ai-wiki">
+                <h2>AI Wiki</h2>
+                <p>Welcome to the AI Wiki, a collection of articles and explanations about Artificial Intelligence. The goal of this section is to provide clear and concise information about various AI concepts.</p>
+                
+                <div class="wiki-section">
+                    <h3>Core Concepts</h3>
+                    <ul>
+                        <li><a href="posts/what-is-a-neural-network.html">What is a Neural Network?</a></li>
+                        <li><a href="posts/large-language-models.html">Large Language Models (LLMs)</a></li>
+                    </ul>
+                </div>
+
+                <div class="wiki-section">
+                    <h3>Applications</h3>
+                    <ul>
+                        <li><a href="posts/introduction-to-robotics.html">Introduction to Robotics</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div data-include="_includes/footer.html"></div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
