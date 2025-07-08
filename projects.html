@@ -1,44 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danial Pahlavan Mosavari - Current Projects</title>
-    <link rel="stylesheet" href="themes/default/style.css">
-    <script>
-        // Apply theme immediately
-        (function() {
-            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.classList.add(theme + '-mode');
-        })();
-    </script>
-    </head>
-    <body>
-        <div data-include="_includes/header.html"></div>
-        <div class="container">
-            <section id="projects" data-page="projects">
-                <h2>Projects</h2>
-                <div id="category-filters">
-                    <!-- Category filter buttons will be dynamically loaded here by JavaScript -->
-                </div>
-                <div id="project-cards-container">
-                    <!-- Project cards will be dynamically loaded here by JavaScript -->
-                </div>
-            </section>
-        </div>
+---
+layout: default
+title: Projects
+---
+<section id="projects" data-page="projects">
+    <h2>Projects</h2>
+    <div id="category-filters">
+        <!-- Category filter buttons will be dynamically loaded here by JavaScript -->
+    </div>
+    <div id="project-cards-container">
+        <!-- Project cards will be dynamically loaded here by JavaScript -->
+    </div>
+</section>
 
-        <!-- Project Modal -->
-        <div id="projectModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h3 id="modalProjectTitle"></h3>
-                <p id="modalProjectDescription"></p>
-                <a id="modalProjectLink" href="#" target="_blank">View on GitHub</a>
-            </div>
-        </div>
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modalProjectTitle"></h3>
+        <p id="modalProjectDescription"></p>
+        <a id="modalProjectLink" href="#" target="_blank">View on GitHub</a>
+    </div>
+</div>
 
-        <div data-include="_includes/footer.html"></div>
-        <script src="js/projects.js"></script>
-        <script src="js/script.js"></script>
-    </body>
-</html>
+<script src="js/projects.js"></script>

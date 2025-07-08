@@ -1,63 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danial Pahlavan Mosavari - Curriculum Vitae</title>
-    <link rel="stylesheet" href="themes/default/style.css">
-    <script>
-        // Apply theme immediately
-        (function() {
-            const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.classList.add(theme + '-mode');
-        })();
-    </script>
-    </head>
-    <body>
-        <div data-include="_includes/header.html"></div>
-        <div class="container">
-        <section id="contact" data-page="home">
-            <h2>Contact Information</h2>
+---
+layout: default
+title: Home
+---
+<section id="contact" data-page="home">
+    <h2>Contact Information</h2>
+    <ul>
+        <li>Email: danial.pahlavanmossavari307 [at] gmail [dot] com</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/danialpahlavan/" target="_blank">linkedin.com/in/danialpahlavan</a></li>
+        <li>GitHub: <a href="https://github.com/DanialPahlavan" target="_blank">github.com/DanialPahlavan</a></li>
+    </ul>
+</section>
+
+<section id="about-me" data-page="home">
+    <h2>About Me</h2>
+    <section id="summary">
+        <h3>Summary</h3>
+        <p>PhD student in Artificial Intelligence at Azad University, with a strong background in AI Engineering and Robotics from Ferdowsi University of Mashhad. Experienced in Python, C++, machine learning, computer vision, and robotics. Creative problem-solver passionate about leveraging technology for real-world challenges. Excellent communicator and team player.</p>
+    </section>
+
+    <section id="experience">
+        <h3>Experience</h3>
+        <div class="job">
+            <h3>Web Mining of PDF Scientific Papers – Ferdowsi University of Mashhad</h3>
+            <p><em>Feb 2022 – Apr 2022, Mashhad</em></p>
             <ul>
-                <li>Email: danial.pahlavanmossavari307 [at] gmail [dot] com</li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/danialpahlavan/" target="_blank">linkedin.com/in/danialpahlavan</a></li>
-                <li>GitHub: <a href="https://github.com/DanialPahlavan" target="_blank">github.com/DanialPahlavan</a></li>
+                <li>Developed a tool to extract key information from Farsi scientific papers in PDF format.</li>
+                <li>Created a program to generate outputs with relevant details such as titles, authors, and keywords.</li>
+                <li>Utilized web scraping and data mining techniques to extract data from PDF files.</li>
+                <li>Employed Python and libraries such as PyPDF2 to implement the project.</li>
+                <li>Applied OCR to convert non-copyable Persian language articles into machine-readable text.</li>
             </ul>
-        </section>
-
-        <section id="about-me" data-page="home">
-            <h2>About Me</h2>
-            <section id="summary">
-                <h3>Summary</h3>
-                <p>PhD student in Artificial Intelligence at Azad University, with a strong background in AI Engineering and Robotics from Ferdowsi University of Mashhad. Experienced in Python, C++, machine learning, computer vision, and robotics. Creative problem-solver passionate about leveraging technology for real-world challenges. Excellent communicator and team player.</p>
-            </section>
-
-            <section id="experience">
-                <h3>Experience</h3>
-                <div class="job">
-                    <h3>Web Mining of PDF Scientific Papers – Ferdowsi University of Mashhad</h3>
-                    <p><em>Feb 2022 – Apr 2022, Mashhad</em></p>
-                    <ul>
-                        <li>Developed a tool to extract key information from Farsi scientific papers in PDF format.</li>
-                        <li>Created a program to generate outputs with relevant details such as titles, authors, and keywords.</li>
-                        <li>Utilized web scraping and data mining techniques to extract data from PDF files.</li>
-                        <li>Employed Python and libraries such as PyPDF2 to implement the project.</li>
-                        <li>Applied OCR to convert non-copyable Persian language articles into machine-readable text.</li>
-                    </ul>
-                </div>
-                <div class="job">
-                    <h3>Machine Learning for Embedded Systems – Ferdowsi University of Mashhad</h3>
-                    <p><em>Nov 2021 – Dec 2021, Mashhad</em></p>
-                    <ul>
-                        <li>Developed and compiled C code for machine learning applications on embedded systems using Ubuntu.</li>
-                        <li>Utilized GitHub for collaborative project development with team members.</li>
-                        <li>Implemented AI models on micro-controllers, gaining practical embedded system skills.</li>
-                        <li>Researched AI models and their application in embedded systems.</li>
-                        <li>Contributed to team efforts in designing and implementing an AI-based project on a micro-controller platform.</li>
-                    </ul>
-                </div>
-                <div class="job">
-                    <h3>Watermarking and Steganography – Ferdowsi University of Mashhad</h3>
+        </div>
+        <div class="job">
+            <h3>Machine Learning for Embedded Systems – Ferdowsi University of Mashhad</h3>
+            <p><em>Nov 2021 – Dec 2021, Mashhad</em></p>
+            <ul>
+                <li>Developed and compiled C code for machine learning applications on embedded systems using Ubuntu.</li>
+                <li>Utilized GitHub for collaborative project development with team members.</li>
+                <li>Implemented AI models on micro-controllers, gaining practical embedded system skills.</li>
+                <li>Researched AI models and their application in embedded systems.</li>
+                <li>Contributed to team efforts in designing and implementing an AI-based project on a micro-controller platform.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Watermarking and Steganography – Ferdowsi University of Mashhad</h3>
                     <p><em>2020, Mashhad</em></p>
                     <ul>
                         <li>Designed and implemented an image watermarking system using DCT and DWT techniques.</li>
