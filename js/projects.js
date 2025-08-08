@@ -22,5 +22,5 @@ const projects = [
         "description": "A REST API that identifies objects in images.",
         "category": "AI",
         "link": "#"
-    }
+    },
 ];
