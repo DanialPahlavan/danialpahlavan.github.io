@@ -1,2 +1,5 @@
 
 .DS_Store
+__pycache__/app.cpython-312.pyc
+__pycache__/config.cpython-312.pyc
+routers/__pycache__/pages.cpython-312.pyc

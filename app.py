@@ -1,27 +1,21 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
+from routers import pages
 
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
-
-@app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "title": "Home"})
+app.include_router(pages.router)
 
 @app.get("/healthz")
 async def health_check():
     return {"status": "ok"}
 
-@app.get("/posts/{post_name}", response_class=HTMLResponse)
-async def show_post(request: Request, post_name: str):
-    return templates.TemplateResponse(f"posts/{post_name}.html", {"request": request, "title": post_name.replace('-', ' ').title()})
+@app.get("/robots.txt")
+async def robots_txt():
+    return FileResponse("static/robots.txt")
 
-@app.get("/{page_name:path}", response_class=HTMLResponse)
-async def show_page(request: Request, page_name: str):
-    if not page_name.endswith('.html'):
-        page_name += '.html'
-    return templates.TemplateResponse(page_name, {"request": request, "title": page_name.replace('.html', '').replace('-', ' ').title()})
+@app.get("/favicon.png", include_in_schema=False)
+async def favicon():
+    return FileResponse("static/favicon.png")
