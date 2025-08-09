@@ -1,7 +1,5 @@
----
-layout: default
-title: Blog
----
+{% extends "layouts/default.html" %}
+{% block content %}
 <section id="blog-posts">
     <h2>Blog</h2>
     <article class="blog-post">
@@ -9,7 +7,7 @@ title: Blog
         <p class="post-meta">Published on July 6, 2025</p>
         <div class="post-summary">
             <p>This is a placeholder for a blog post about Neural Networks. You can replace this text with your own content.</p>
-            <a href="posts/what-is-a-neural-network.html" class="read-more">Read more...</a>
+            <a href="/posts/what-is-a-neural-network" class="read-more">Read more...</a>
         </div>
     </article>
     <article class="blog-post">
@@ -17,7 +15,7 @@ title: Blog
         <p class="post-meta">Published on July 6, 2025</p>
         <div class="post-summary">
             <p>Large Language Models (LLMs) have taken the world by storm, demonstrating remarkable abilities in understanding and generating human-like text.</p>
-            <a href="posts/large-language-models.html" class="read-more">Read more...</a>
+            <a href="/posts/large-language-models" class="read-more">Read more...</a>
         </div>
     </article>
     <article class="blog-post">
@@ -25,9 +23,10 @@ title: Blog
         <p class="post-meta">Published on July 6, 2025</p>
         <div class="post-summary">
             <p>Robotics is a multidisciplinary field that involves the design, construction, operation, and use of robots.</p>
-            <a href="posts/introduction-to-robotics.html" class="read-more">Read more...</a>
+            <a href="/posts/introduction-to-robotics" class="read-more">Read more...</a>
         </div>
     </article>
 
   
 </section>
+{% endblock %}

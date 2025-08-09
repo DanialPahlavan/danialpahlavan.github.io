@@ -1,18 +1,16 @@
----
-layout: default
-title: Certificates
----
+{% extends "layouts/default.html" %}
+{% block content %}
 <section id="certs">
     <h2>Certificates</h2>
     <div class="cert-container">
         <div class="cert-card">
-            <img src="{{ '/cert/2024/ComputerScience/ML_DS/introductiontomachinelearning.jpg' | relative_url }}" alt="Introduction to Machine Learning">
+            <img src="{{ url_for('static', path='cert/2024/ComputerScience/ML_DS/introductiontomachinelearning.jpg') }}" alt="Introduction to Machine Learning">
             <h3>Introduction to Machine Learning</h3>
             <p>Issued by Great Learning, Oct 2024</p>
             <a href="https://www.mygreatlearning.com/certificate/ATIVEEXZ" target="_blank">Show credential</a>
         </div>
         <div class="cert-card">
-            <img src="{{ '/cert/2024/ComputerScience/python/1668718064548.png' | relative_url }}" alt="Python for Non-Programmers">
+            <img src="{{ url_for('static', path='cert/2024/ComputerScience/python/1668718064548.png') }}" alt="Python for Non-Programmers">
             <h3>Python for Non-Programmers</h3>
             <p>Issued by LinkedIn, Nov 2022</p>
             <a href="https://www.linkedin.com/learning/certificates/8edbcee506169f7a3230df3de43253ea65b5baa7b1ba9da783cd0cb5588d9c6d" target="_blank">Show credential</a>
@@ -97,3 +95,4 @@ title: Certificates
         </div>
     </div>
 </section>
+{% endblock %}

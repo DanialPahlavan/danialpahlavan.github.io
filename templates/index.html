@@ -1,7 +1,5 @@
----
-layout: default
-title: Home
----
+{% extends "layouts/default.html" %}
+{% block content %}
 <section id="contact" data-page="home">
     <h2>Contact Information</h2>
     <ul>
@@ -133,7 +131,4 @@ title: Home
             </section>
         </section>
 
-        <div data-include="_includes/footer.html"></div>
-        <script src="js/script.js"></script>
-    </body>
-</html>
+{% endblock %}

@@ -1,7 +1,5 @@
----
-layout: default
-title: Projects
----
+{% extends "layouts/default.html" %}
+{% block content %}
 <section id="projects" data-page="projects">
     <h2>Projects</h2>
     <div id="category-filters">
@@ -22,4 +20,5 @@ title: Projects
     </div>
 </div>
 
-<script src="js/projects.js"></script>
+<script src="{{ url_for('static', path='js/projects.js') }}"></script>
+{% endblock %}

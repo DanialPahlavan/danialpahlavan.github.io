@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/themes/default/style.css">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='themes/default/style.css') }}">
   <script>
     (function() {
       const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -13,11 +13,11 @@
   </script>
 </head>
 <body>
-  {% include header.html %}
+  {% include 'includes/header.html' %}
   <div class="container">
-    {{ content }}
+    {% block content %}{% endblock %}
   </div>
-  {% include footer.html %}
-  <script src="/js/script.js"></script>
+  {% include 'includes/footer.html' %}
+  <script src="{{ url_for('static', path='js/script.js') }}"></script>
 </body>
 </html>
