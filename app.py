@@ -20,6 +20,8 @@ async def health_check():
 async def show_post(request: Request, post_name: str):
     return templates.TemplateResponse(f"posts/{post_name}.html", {"request": request, "title": post_name.replace('-', ' ').title()})
 
-@app.get("/{page_name}", response_class=HTMLResponse)
+@app.get("/{page_name:path}", response_class=HTMLResponse)
 async def show_page(request: Request, page_name: str):
-    return templates.TemplateResponse(f"{page_name}.html", {"request": request, "title": page_name.replace('-', ' ').title()})
+    if not page_name.endswith('.html'):
+        page_name += '.html'
+    return templates.TemplateResponse(page_name, {"request": request, "title": page_name.replace('.html', '').replace('-', ' ').title()})
