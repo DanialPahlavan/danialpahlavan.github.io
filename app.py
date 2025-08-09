@@ -10,7 +10,11 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request, "title": "Home"})
+
+@app.get("/healthz")
+async def health_check():
+    return {"status": "ok"}
 
 @app.get("/posts/{post_name}", response_class=HTMLResponse)
 async def show_post(request: Request, post_name: str):
