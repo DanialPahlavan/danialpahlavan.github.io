@@ -6,7 +6,6 @@ from routers import pages
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.include_router(pages.router)
 
 @app.get("/healthz")
 async def health_check():
@@ -19,3 +18,5 @@ async def robots_txt():
 @app.get("/favicon.png", include_in_schema=False)
 async def favicon():
     return FileResponse("static/favicon.png")
+
+app.include_router(pages.router)
